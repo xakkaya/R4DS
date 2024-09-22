@@ -49,7 +49,8 @@ flights |> arrange(dep_time)
 
 # Sort flights to find the fastest flights. (Hint: Try including a math calculation inside of your function.)
 flights |> arrange(desc(distance / (air_time / 60)))
-flights |> mutate(speed = distance / (air_time / 60)) |> arrange(desc(speed)) |> 
+flights |> mutate(speed = distance / (air_time / 60)) |> 
+  arrange(desc(speed)) |> 
   select(flight, origin, dest, distance, air_time, speed)
 
 # Was there a flight on every day of 2013?
@@ -57,8 +58,10 @@ flights |> distinct(year, month, day) # 365 rows so yes
 flights |> distinct(year, month, day) |> count()
 
 # Which flights traveled the farthest distance? Which traveled the least distance?
-flights |> arrange(desc(distance)) |> select(flight, origin, dest, distance)
-flights |> arrange(distance) |> select(flight, origin, dest, distance)
+flights |> arrange(desc(distance)) |> 
+  select(flight, origin, dest, distance)
+flights |> arrange(distance) |> 
+  select(flight, origin, dest, distance)
 
 # Does it matter what order you used filter() and arrange() if you’re using both? Why/why not?
 # Think about the results and how much work the functions would have to do.
@@ -134,14 +137,19 @@ flights |> summarize(delay = mean(dep_delay, na.rm = TRUE), n = n(), .by = c(ori
 
 # Which carrier has the worst average delays? Challenge: can you disentangle the effects of bad airports vs. bad carriers?
 # Why/why not? (Hint: think about flights |> group_by(carrier, dest) |> summarize(n()))
-flights |> group_by(carrier) |> summarize(avg_delay = mean(dep_delay, na.rm = TRUE), n= n()) |> arrange(desc(avg_delay))
+flights |> group_by(carrier) |> 
+  summarize(avg_delay = mean(dep_delay, na.rm = TRUE), n= n()) |> 
+  arrange(desc(avg_delay))
 # F9 is the worst
 
 # Find the flights that are most delayed upon departure from each destination.
-flights |> group_by(dest) |> arrange(dest, desc(dep_delay)) |> relocate(dest, dep_delay)
+flights |> group_by(dest) |> 
+  arrange(dest, desc(dep_delay)) |> 
+  relocate(dest, dep_delay)
 
 # How do delays vary over the course of the day? Illustrate your answer with a plot.
-flights |> group_by(hour) |> summarize(avg_delay = mean(dep_delay, na.rm = TRUE), n= n()) |>
+flights |> group_by(hour) |> 
+  summarize(avg_delay = mean(dep_delay, na.rm = TRUE), n= n()) |>
   ggplot(aes(x=hour, y=avg_delay)) + geom_smooth()
 # It increases until 7.30 p.m. then starts decreasing
 
