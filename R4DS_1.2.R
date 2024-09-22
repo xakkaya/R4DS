@@ -66,12 +66,15 @@ ggplot(data = penguins, mapping = aes(x=bill_length_mm, y=bill_depth_mm, color=s
 
 # Add the following caption to the plot you made in the previous exercise:
 # “Data come from the palmerpenguins package.” Hint: Take a look at the documentation for labs().
-ggplot(data = penguins, mapping = aes(x=bill_length_mm, y=bill_depth_mm, color=species)) + geom_point(na.rm = TRUE) +
+ggplot(data = penguins, mapping = aes(x=bill_length_mm, y=bill_depth_mm, color=species)) + 
+  geom_point(na.rm = TRUE) +
   labs(caption = "Data come from the palmerpenguins package.")
 
 # Recreate the following visualization. What aesthetic should bill_depth_mm be mapped to?
 # And should it be mapped at the global level or at the geom level?
-ggplot(data = penguins, mapping = aes(x=flipper_length_mm, y=body_mass_g, color=bill_depth_mm))+geom_point()+geom_smooth()
+ggplot(data = penguins, mapping = aes(x=flipper_length_mm, y=body_mass_g, color=bill_depth_mm)) + 
+  geom_point() + 
+  geom_smooth()
 # bill_depth_mm mapped to color aesthetic, and mapped at the global level
 
 # Run this code in your head and predict what the output will look like. Then, run the code in R and check your predictions.
