@@ -106,26 +106,28 @@ View(mpg)
 # Make a scatterplot of hwy vs. displ using the mpg data frame.
 # Next, map a third, numerical variable to color, then size, then both color and size, then shape.
 # How do these aesthetics behave differently for categorical vs. numerical variables?
-ggplot(mpg, aes(x=hwy, y=displ, color=cty))+geom_point()
-ggplot(mpg, aes(x=hwy, y=displ, size=cty))+geom_point()
-ggplot(mpg, aes(x=hwy, y=displ, color=cty, size=cty))+geom_point()
+ggplot(mpg, aes(x=hwy, y=displ, color=cty)) + geom_point()
+ggplot(mpg, aes(x=hwy, y=displ, size=cty)) + geom_point()
+ggplot(mpg, aes(x=hwy, y=displ, color=cty, size=cty)) + geom_point()
 # ggplot(mpg, aes(x=hwy, y=displ, shape=year))+geom_point()
 # numerical var. does not work with shape
-ggplot(mpg, aes(x=hwy, y=displ, color=cty, size=cty, shape=drv))+geom_point()
+ggplot(mpg, aes(x=hwy, y=displ, color=cty, size=cty, shape=drv)) + geom_point()
 
 # In the scatterplot of hwy vs. displ, what happens if you map a third variable to linewidth?
-ggplot(mpg, aes(x=hwy, y=displ, linewidth = cty))+geom_point()
+ggplot(mpg, aes(x=hwy, y=displ, linewidth = cty)) + geom_point()
 # Nothing happens
 
 # What happens if you map the same variable to multiple aesthetics?
-ggplot(mpg, aes(x=drv, y=drv, color=drv, size=drv, shape=drv))+geom_point()
+ggplot(mpg, aes(x=drv, y=drv, color=drv, size=drv, shape=drv)) + geom_point()
 # not useful
 
 # Make a scatterplot of bill_depth_mm vs. bill_length_mm and color the points by species.
 # What does adding coloring by species reveal about the relationship between these two variables? What about faceting by species?
 ggplot(penguins, aes(x=bill_depth_mm, y=bill_length_mm, color=species)) + geom_point()
 # Adelies tend to have deeper bills while Gentoos have longer ones. Chinstraps have longer and deeper bills.
-ggplot(penguins, aes(x=bill_depth_mm, y=bill_length_mm, color=species)) + geom_point() + facet_wrap(~species)
+ggplot(penguins, aes(x=bill_depth_mm, y=bill_length_mm, color=species)) + 
+  geom_point() + 
+  facet_wrap(~species)
 
 # Why does the following yield two separate legends? How would you fix it to combine the two legends?
 ggplot(
