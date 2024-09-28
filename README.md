@@ -11,12 +11,12 @@ This repository contains notes and exercises related to the book *R for Data Sci
 
 ## Overview
 The purpose of this repository is to document my learning journey through the *R for Data Science* book. The repository includes:
-- (Chapter 1 - Data visualization, Introduction & First Steps)[https://github.com/xakkaya/R4DS/blob/main/R4DS_1.2.R]
-- (Chapter 1 - Data visualization, ggplot)[https://github.com/xakkaya/R4DS/blob/main/R4DS_1.3.R]
-- (Chapter 3 - Data transformation)[https://github.com/xakkaya/R4DS/blob/main/R4DS_3.R]
-- (Chapter 5 - Data tidying)[https://github.com/xakkaya/R4DS/blob/main/R4DS_5.R]
-- (Chapter 7 - Data import)[https://github.com/xakkaya/R4DS/blob/main/R4DS_7.R]
-- (Chapter 9 - Visualize, Layers)[https://github.com/xakkaya/R4DS/blob/main/R4DS_9.R]
+- [Chapter 1 - Data visualization, Introduction & First Steps](https://github.com/xakkaya/R4DS/blob/main/R4DS_1.2.R)
+- [Chapter 1 - Data visualization, ggplot](https://github.com/xakkaya/R4DS/blob/main/R4DS_1.3.R)
+- [Chapter 3 - Data transformation](https://github.com/xakkaya/R4DS/blob/main/R4DS_3.R)
+- [Chapter 5 - Data tidying](https://github.com/xakkaya/R4DS/blob/main/R4DS_5.R)
+- [Chapter 7 - Data import](https://github.com/xakkaya/R4DS/blob/main/R4DS_7.R)
+- [Chapter 9 - Visualize, Layers](https://github.com/xakkaya/R4DS/blob/main/R4DS_9.R)
 
 ## Installation
 To run the code in this repository, you'll need to have R and RStudio installed on your machine.
